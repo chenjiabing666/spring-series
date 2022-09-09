@@ -1,0 +1,19 @@
+package com.javacode2018.lesson001.demo18;
+
+import java.lang.annotation.ElementType;
+import java.lang.annotation.Retention;
+import java.lang.annotation.RetentionPolicy;
+import java.lang.annotation.Target;
+
+@Target(ElementType.TYPE)
+@Retention(RetentionPolicy.RUNTIME)
+@interface Ann4 {
+    String[] name();//@1
+}
+
+@Ann4(name = {"我是陈某java", "欢迎和我一起学spring"}) //@2
+public class UseAnnotation4 {
+    @Ann4(name = "如果只有一个值，{}可以省略") //@3
+    public class T1 {
+    }
+}

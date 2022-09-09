@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+	http://www.springframework.org/schema/beans/spring-beans-4.3.xsd">
+
+    <bean id="serviceA" class="com.javacode2018.lesson001.demo12.ServiceA"/>
+
+    <bean id="baseService" abstract="true">
+        <property name="name" value="陈某Java"/>
+        <property name="serviceA" ref="serviceA"/>
+    </bean>
+
+    <bean id="serviceB" class="com.javacode2018.lesson001.demo12.ServiceB" parent="baseService"/>
+
+    <bean id="serviceC" class="com.javacode2018.lesson001.demo12.ServiceC" parent="baseService">
+        <property name="name" value="欢迎和【陈某Java】一起学些spring!"/>
+    </bean>
+
+</beans>
